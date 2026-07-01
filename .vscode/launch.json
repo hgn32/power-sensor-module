@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "easyeda-api-skill: npm run server",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/.claude/skills/easyeda-api-skill",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "server"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(wsl --list --verbose)",
+      "PowerShell(wsl -d Ubuntu -e bash -lc \"which docker; docker version --format '{{.Server.Version}}' 2>&1; cat /etc/os-release | head -2\")"
+    ]
+  }
+}

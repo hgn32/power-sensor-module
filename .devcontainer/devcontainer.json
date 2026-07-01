@@ -1,0 +1,37 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-docker-compose
+{
+  "name": "${localWorkspaceFolderBasename}-devcontainer",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "service": "workspace",
+  "workspaceFolder": "/workspaces",
+  "forwardPorts": [
+    49620
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "remote.autoForwardPorts": false
+      },
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "eamodio.gitlens",
+        "MS-CEINTL.vscode-language-pack-ja",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "lokalise.i18n-ally",
+        "ms-vsliveshare.vsliveshare",
+        "Prisma.prisma",
+        "redhat.vscode-yaml",
+        "mutantdino.resourcemonitor",
+        "ms-azuretools.vscode-docker",
+        "anthropic.claude-code",
+        "hediet.vscode-drawio"
+      ]
+    }
+  },
+  "shutdownAction": "stopCompose",
+  "remoteUser": "node"
+}

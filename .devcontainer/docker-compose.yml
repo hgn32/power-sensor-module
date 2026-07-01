@@ -1,0 +1,16 @@
+# current dirは".devcontainer/"
+version: '3'
+services:
+  workspace:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    working_dir: /workspaces
+    volumes:
+      - ../:/workspaces:cached
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ~/.claude:/home/node/.claude
+    tty: true
+volumes:
+  claude-config:
+    driver: local

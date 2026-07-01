@@ -1,0 +1,133 @@
+# 電力センサーモジュール ESPHomeサンプル設定(ドラフト)
+#
+# 前提: ../../docs/spec.md の確定仕様に基づく構成
+#   - マイコン: Seeed Studio XIAO ESP32C6
+#   - ADC: ADS1115(1個, 4ch中3ch使用)
+#   - センサー: CTクランプ SCT-013-000 x3(シングルエンドモード+バイアス回路)
+#
+# calibrate_linear の値は仮の例。個体ごとにクランプメーターとの
+# 比較測定で校正すること(詳細は ../../docs/calibration.md 参照)。
+
+esphome:
+  name: power-sensor-module
+  friendly_name: 電力センサーモジュール
+
+esp32:
+  board: seeed_xiao_esp32c6
+  framework:
+    type: esp-idf
+
+# Wi-Fi / API / OTA の資格情報は secrets.yaml で管理する
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+api:
+  encryption:
+    key: !secret api_encryption_key
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+logger:
+
+i2c:
+  sda: GPIO4  # XIAO ESP32C6 D4
+  scl: GPIO5  # XIAO ESP32C6 D5
+  scan: true
+
+ads1115:
+  - address: 0x48
+
+sensor:
+  # --- ブレーカー1 ---
+  - platform: ads1115
+    id: ct1_raw
+    multiplexer: 'A0_GND'
+    gain: 4.096
+    internal: true
+
+  - platform: ct_clamp
+    sensor: ct1_raw
+    name: "ブレーカー1 電流"
+    id: breaker1_current
+    unit_of_measurement: A
+    update_interval: 60s
+    sample_duration: 500ms
+    filters:
+      - calibrate_linear:
+          # (ADS1115実測値, 実電流A) の対応。要実測校正
+          - 0.0 -> 0.0
+          - 1.65 -> 0.0   # バイアス電圧オフセット
+          - 2.00 -> 10.0  # 仮の校正点(クランプメーターで実測して置き換える)
+
+  # 電力(W) = 電流(A) x 想定電圧(100V) で近似(spec.md 4.2参照)
+  - platform: template
+    name: "ブレーカー1 電力(近似)"
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    lambda: |-
+      return id(breaker1_current).state * 100.0;
+    update_interval: 60s
+
+  # --- ブレーカー2 ---
+  - platform: ads1115
+    id: ct2_raw
+    multiplexer: 'A1_GND'
+    gain: 4.096
+    internal: true
+
+  - platform: ct_clamp
+    sensor: ct2_raw
+    name: "ブレーカー2 電流"
+    id: breaker2_current
+    unit_of_measurement: A
+    update_interval: 60s
+    sample_duration: 500ms
+    filters:
+      - calibrate_linear:
+          - 0.0 -> 0.0
+          - 1.65 -> 0.0
+          - 2.00 -> 10.0
+
+  - platform: template
+    name: "ブレーカー2 電力(近似)"
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    lambda: |-
+      return id(breaker2_current).state * 100.0;
+    update_interval: 60s
+
+  # --- ブレーカー3 ---
+  - platform: ads1115
+    id: ct3_raw
+    multiplexer: 'A2_GND'
+    gain: 4.096
+    internal: true
+
+  - platform: ct_clamp
+    sensor: ct3_raw
+    name: "ブレーカー3 電流"
+    id: breaker3_current
+    unit_of_measurement: A
+    update_interval: 60s
+    sample_duration: 500ms
+    filters:
+      - calibrate_linear:
+          - 0.0 -> 0.0
+          - 1.65 -> 0.0
+          - 2.00 -> 10.0
+
+  - platform: template
+    name: "ブレーカー3 電力(近似)"
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    lambda: |-
+      return id(breaker3_current).state * 100.0;
+    update_interval: 60s
+
+  # 4ch目(A3_GND)は予備。使用する場合は上記と同様に追加する

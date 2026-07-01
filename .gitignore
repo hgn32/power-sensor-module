@@ -1,0 +1,11 @@
+# ESPHome
+firmware/esphome/secrets.yaml
+firmware/esphome/.esphome/
+
+# EasyEDA API skill(依存関係・ローカルビルド成果物)
+.claude/skills/easyeda-api-skill/node_modules/
+.claude/skills/easyeda-api-skill/dist/
+
+# OS / エディタ
+.DS_Store
+*.log
