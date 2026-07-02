@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1020" height="430" viewBox="0 0 1020 430" content="&lt;mxfile host=&quot;app.diagrams.net&quot; agent=&quot;claude&quot; version=&quot;24.0.0&quot;&gt;&lt;diagram id=&quot;power-sensor-block&quot; name=&quot;接続図&quot;&gt;&lt;mxGraphModel dx=&quot;1000&quot; dy=&quot;500&quot; grid=&quot;1&quot; gridSize=&quot;10&quot; guides=&quot;1&quot; tooltips=&quot;1&quot; connect=&quot;1&quot; arrows=&quot;1&quot; fold=&quot;1&quot; page=&quot;1&quot; pageScale=&quot;1&quot; pageWidth=&quot;1020&quot; pageHeight=&quot;430&quot; math=&quot;0&quot; shadow=&quot;0&quot;&gt;&lt;root&gt;&lt;mxCell id=&quot;0&quot;/&gt;&lt;mxCell id=&quot;1&quot; parent=&quot;0&quot;/&gt;&lt;mxCell id=&quot;n1&quot; value=&quot;分電盤&amp;#xa;CTクランプ&amp;#xa;SCT-013-000 ×12&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;20&quot; y=&quot;120&quot; width=&quot;150&quot; height=&quot;90&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;n2&quot; value=&quot;3.5mmジャック&amp;#xa;CN1〜CN12&amp;#xa;(PJ-320D)&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;210&quot; y=&quot;120&quot; width=&quot;140&quot; height=&quot;90&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;n3&quot; value=&quot;入力回路 ×12&amp;#xa;負荷抵抗 22Ω固定&amp;#xa;+ 0〜100Ωトリマー&amp;#xa;+ 100nFフィルタ&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;390&quot; y=&quot;100&quot; width=&quot;170&quot; height=&quot;130&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;n4&quot; value=&quot;U3 ADS1115 0x48&amp;#xa;CN1〜CN4&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;600&quot; y=&quot;60&quot; width=&quot;160&quot; height=&quot;50&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;n5&quot; value=&quot;U4 ADS1115 0x49&amp;#xa;CN5〜CN8&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;600&quot; y=&quot;130&quot; width=&quot;160&quot; height=&quot;50&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;n6&quot; value=&quot;U5 ADS1115 0x4A&amp;#xa;CN9〜CN12&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;600&quot; y=&quot;200&quot; width=&quot;160&quot; height=&quot;50&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;n7&quot; value=&quot;U1 XIAO ESP32C6&amp;#xa;SDA=D4, SCL=D5&amp;#xa;LED1(D0)&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;820&quot; y=&quot;110&quot; width=&quot;160&quot; height=&quot;90&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;n8&quot; value=&quot;Home Assistant&amp;#xa;(ESPHome)&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;820&quot; y=&quot;280&quot; width=&quot;160&quot; height=&quot;60&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;n9&quot; value=&quot;VBIAS 1.65V 生成&amp;#xa;10k/10k分圧 + 10µF&amp;#xa;LMV358フォロワ (U2)&amp;#xa;12ch共有&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;390&quot; y=&quot;300&quot; width=&quot;170&quot; height=&quot;100&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;n10&quot; value=&quot;電源&amp;#xa;USB-C 5V → 内蔵レギュレータ 3.3V&amp;#xa;外部給電パッド TP1(3.3V) / TP2(GND)&amp;#xa;※USB-Cと外部給電の同時使用不可&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;20&quot; y=&quot;300&quot; width=&quot;300&quot; height=&quot;100&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;e1&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;html=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;n1&quot; target=&quot;n2&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;e2&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;html=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;n2&quot; target=&quot;n3&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;e3&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;html=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;n3&quot; target=&quot;n4&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;e4&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;html=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;n3&quot; target=&quot;n5&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;e5&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;html=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;n3&quot; target=&quot;n6&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;e6&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;html=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;n4&quot; target=&quot;n7&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;e7&quot; value=&quot;I2C (10kプルアップ)&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;html=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;n5&quot; target=&quot;n7&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;e8&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;html=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;n6&quot; target=&quot;n7&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;e9&quot; value=&quot;Wi-Fi&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;html=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;n7&quot; target=&quot;n8&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;e10&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;html=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;n9&quot; target=&quot;n3&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;e11&quot; value=&quot;3.3V&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;n10&quot; target=&quot;n9&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <rect width="1020" height="430" fill="#ffffff"/>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">
+    <!-- n1 分電盤 -->
+    <rect x="20" y="120" width="150" height="90" fill="#ffe6cc" stroke="#d79b00"/>
+    <text x="95" y="150">分電盤</text>
+    <text x="95" y="168">CTクランプ</text>
+    <text x="95" y="186">SCT-013-000 ×12</text>
+    <!-- n2 ジャック -->
+    <rect x="210" y="120" width="140" height="90" fill="#dae8fc" stroke="#6c8ebf"/>
+    <text x="280" y="150">3.5mmジャック</text>
+    <text x="280" y="168">CN1〜CN12</text>
+    <text x="280" y="186">(PJ-320D)</text>
+    <!-- n3 入力回路 -->
+    <rect x="390" y="100" width="170" height="130" fill="#dae8fc" stroke="#6c8ebf"/>
+    <text x="475" y="130">入力回路 ×12</text>
+    <text x="475" y="152">負荷抵抗 22Ω固定</text>
+    <text x="475" y="170">+ 0〜100Ωトリマー</text>
+    <text x="475" y="188">+ 100nFフィルタ</text>
+    <!-- n4-n6 ADS1115 -->
+    <rect x="600" y="60" width="160" height="50" fill="#dae8fc" stroke="#6c8ebf"/>
+    <text x="680" y="80">U3 ADS1115 0x48</text>
+    <text x="680" y="97">CN1〜CN4</text>
+    <rect x="600" y="130" width="160" height="50" fill="#dae8fc" stroke="#6c8ebf"/>
+    <text x="680" y="150">U4 ADS1115 0x49</text>
+    <text x="680" y="167">CN5〜CN8</text>
+    <rect x="600" y="200" width="160" height="50" fill="#dae8fc" stroke="#6c8ebf"/>
+    <text x="680" y="220">U5 ADS1115 0x4A</text>
+    <text x="680" y="237">CN9〜CN12</text>
+    <!-- n7 XIAO -->
+    <rect x="820" y="110" width="160" height="90" fill="#fff2cc" stroke="#d6b656"/>
+    <text x="900" y="140">U1 XIAO ESP32C6</text>
+    <text x="900" y="158">SDA=D4, SCL=D5</text>
+    <text x="900" y="176">LED1(D0)</text>
+    <!-- n8 HA -->
+    <rect x="820" y="280" width="160" height="60" fill="#ffe6cc" stroke="#d79b00"/>
+    <text x="900" y="305">Home Assistant</text>
+    <text x="900" y="323">(ESPHome)</text>
+    <!-- n9 VBIAS -->
+    <rect x="390" y="300" width="170" height="100" fill="#d5e8d4" stroke="#82b366"/>
+    <text x="475" y="325">VBIAS 1.65V 生成</text>
+    <text x="475" y="343">10k/10k分圧 + 10µF</text>
+    <text x="475" y="361">LMV358フォロワ (U2)</text>
+    <text x="475" y="379">12ch共有</text>
+    <!-- n10 電源 -->
+    <rect x="20" y="300" width="300" height="100" fill="#d5e8d4" stroke="#82b366"/>
+    <text x="170" y="325">電源</text>
+    <text x="170" y="343">USB-C 5V → 内蔵レギュレータ 3.3V</text>
+    <text x="170" y="361">外部給電パッド TP1(3.3V) / TP2(GND)</text>
+    <text x="170" y="379">※USB-Cと外部給電の同時使用不可</text>
+    <!-- edges -->
+    <line x1="170" y1="165" x2="206" y2="165" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="350" y1="165" x2="386" y2="165" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="560" y1="145" x2="596" y2="87" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="560" y1="165" x2="596" y2="155" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="560" y1="185" x2="596" y2="223" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="760" y1="85" x2="816" y2="137" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="760" y1="155" x2="816" y2="155" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="760" y1="225" x2="816" y2="173" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="900" y1="200" x2="900" y2="276" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="475" y1="300" x2="475" y2="234" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="320" y1="350" x2="386" y2="350" stroke="#333333" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+    <!-- edge labels -->
+    <text x="788" y="146" font-size="11" fill="#333333">I2C (10kプルアップ)</text>
+    <text x="925" y="243" font-size="11" fill="#333333">Wi-Fi</text>
+    <text x="353" y="342" font-size="11" fill="#333333">3.3V</text>
+  </g>
+</svg>
